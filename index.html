@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emran Habib</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Open+Sans:300,400,500,700|Waiting+for+the+Sunrise|Shadows+Into+Light" rel="stylesheet" type="text/css">
+  <style>
+    *, *:before, *:after {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      color: #333332;
+      font-family: Lora, serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.4;
+      text-rendering: optimizeLegibility;
+      margin: 0;
+      background: #ffffff; /* Force white background regardless of dark mode */
+    }
+
+    a {
+      color: #f97316; /* Orange for all links */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #ea580c; /* Slightly darker orange on hover */
+    }
+
+    h1 {
+      color: rgba(0, 0, 0, 0.75);
+    }
+
+    .wrapper {
+      height: 100%;
+    }
+
+    .left {
+      background-color: rgba(0, 0, 0, 0.025);
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      float: right;
+      height: 100%;
+      margin-left: -1px;
+      min-width: 256px;
+      position: fixed;
+      width: 33.33%;
+      color: #333332;
+    }
+
+    .right {
+      float: right;
+      height: 100%;
+      position: relative;
+      width: 66.66%;
+    }
+
+    .name-hero {
+      bottom: 0;
+      height: 340px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .me-img {
+      background: url(https://media.licdn.com/dms/image/v2/D4E22AQEBR8PiSYwh6A/feedshare-shrink_2048_1536/B4EZs6MR0WIwAw-/0/1766207856773?e=1773273600&v=beta&t=Wdqmnm3LazXIyiQC3PuEWQzPzmrmueN3xYOFv4J7I9I)
+        no-repeat center 15%;
+      /* Zoom in and crop higher part of the image while keeping the same container size */
+      background-size: 190%;
+      border-radius: 0;
+      height: 170px;
+      margin: -10px auto 1.25rem auto; /* Slightly raise the image */
+      position: relative;
+      width: 170px;
+      box-shadow: none;
+      border: none;
+    }
+
+    .name-hero h1 {
+      font-family: Open Sans, sans-serif;
+      font-size: 1.7em;
+      text-align: center;
+      margin: 0 0 0.35rem 0;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .name-hero h1 em {
+      color: rgba(148,163,184,1);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .name-hero p {
+      color: rgba(0, 0, 0, 0.75);
+      font-size: 0.85em;
+      line-height: 1.6;
+      margin: 0;
+      text-align: center;
+      font-family: Open Sans, sans-serif;
+    }
+
+    .name-hero .role {
+      font-size: 0.9em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #f97316;
+      margin-bottom: 0.6rem;
+    }
+
+    .name-hero .name-text {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .name-hero .links {
+      margin-top: 0.75rem;
+      font-size: 0.8em;
+    }
+
+    .inner {
+      margin: 0 auto;
+      max-width: 975px;
+      padding: 3em;
+    }
+
+    .inner h1 {
+      /* Match original template typography: only adjust size, inherit font */
+      font-size: 1.75em;
+    }
+
+    .inner p {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .inner p em {
+      color: rgba(0, 0, 0, 1);
+      font-style: normal;
+    }
+
+    .inner section {
+      margin: 80px auto;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-top: -10px;
+      max-width: 700px;
+      padding: 0;
+    }
+
+    .skill-set {
+      margin-top: 0.5rem;
+    }
+
+    .skill-set li {
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: #e5e7eb;
+      display: inline-block;
+      list-style: none;
+      margin: 10px 10px 0 0;
+      padding: 8px 14px;
+      text-align: justify;
+      font-size: 0.8em;
+      font-family: Open Sans, sans-serif;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .skill-set li:hover {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+      color: #0b1120;
+      cursor: default;
+    }
+
+    .exp-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-role {
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.9);
+      font-family: Open Sans, sans-serif;
+    }
+
+    .exp-org {
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    .exp-meta {
+      font-size: 0.85em;
+      color: rgba(0, 0, 0, 0.5);
+      font-family: Open Sans, sans-serif;
+    }
+
+    .exp-desc {
+      font-size: 0.9em;
+      margin-top: 0.25rem;
+    }
+
+    .award-title {
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    .award-meta {
+      font-size: 0.85em;
+      color: rgba(0, 0, 0, 0.5);
+      font-family: Open Sans, sans-serif;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95em;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    .tagline {
+      font-size: 0.9em;
+      color: rgba(0, 0, 0, 0.5);
+      margin-top: 0.5rem;
+    }
+
+    .handmade {
+      text-align: center;
+      margin-top: 100px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .handmade em {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 1.25em;
+      margin-left: 5px;
+      color: #e5e7eb;
+    }
+
+    @media screen and (max-width: 48em) {
+      .right, .left {
+        float: none;
+        position: relative !important;
+        width: 100%;
+        min-height: 500px;
+      }
+      .left {
+        position: relative;
+        height: auto;
+        padding: 2.5rem 0 1rem 0;
+      }
+      .name-hero {
+        position: relative;
+        height: auto;
+      }
+      .inner {
+        padding: 2rem 1.5rem 3rem 1.5rem;
+      }
+      .inner section {
+        margin: 60px auto;
+      }
+      .handmade {
+        text-align: center !important;
+        margin-top: 40px !important;
+      }
+    }
+
+    @media screen and (max-width: 75em) {
+      body {
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 60em) {
+      body {
+        font-size: 14px;
+      }
+    }
+
+    .clearfix:after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper clearfix">
+    <div class="left">
+      <div class="name-hero">
+        <div class="me-img"></div>
+        <div class="name-text">
+          <h1>Emran <em>Habib</em></h1>
+          <p class="role">Cybersecurity Analyst &bull; CrowdStrike</p>
+
+          <p class="links">
+            <a href="https://www.linkedin.com/in/emran-habib/" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="inner">
+        <!-- About -->
+        <section>
+          <h1>About</h1>
+          <p>
+            I am a cybersecurity analyst at CrowdStrike.
+            My interests include digital forensics and incident response (DFIR) as well as threat hunting
+          </p>
+        </section>
+
+        <!-- Education -->
+        <section>
+          <h1>Education</h1>
+          <div class="exp-item">
+            <p class="exp-role">Georgia State University</p>
+            <p class="exp-org">B.S. in Computer Science - 3.86 GPA</p>
+            <p class="exp-meta">Honors: magna cum laude</p>
+            <p class="exp-meta">2021 &ndash; 2025</p>
+          </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section>
+          <h1>Work Experience</h1>
+
+          <div class="exp-item">
+            <p class="exp-role">Cybersecurity Analyst</p>
+            <p class="exp-org">CrowdStrike</p>
+            <p class="exp-meta"> March 2025 &ndash; Present</p>
+          </div>
+
+
+          <div class="exp-item">
+            <p class="exp-role">President</p>
+            <p class="exp-org">Cybersecurity Club @ GSU</p>
+            <p class="exp-meta">Aug 2021 &ndash; Dec 2025</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="exp-role">Information and Cybersecurity Department (ICD) Intern</p>
+            <p class="exp-org">Georgia Tech Research Institute (GTRI)</p>
+            <p class="exp-meta">Aug 2025 &ndash; Dec 2025</p>
+          </div>
+          
+          <div class="exp-item">
+            <p class="exp-role">Falcon Complete Analyst Intern</p>
+            <p class="exp-org">CrowdStrike</p>
+            <p class="exp-meta">Jun 2025 &ndash; Aug 2025</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="exp-role">Cyber Threat Analyst Intern</p>
+            <p class="exp-org">Southern Company</p>
+            <p class="exp-meta">May 2024 &ndash; May 2025</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="exp-role">Network Services Intern</p>
+            <p class="exp-org">Southern Company</p>
+            <p class="exp-meta">May 2023 &ndash; Jul 2023</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="exp-role">Information Security Intern</p>
+            <p class="exp-org">Georgia Technology Authority (GTA)</p>
+            <p class="exp-meta">May 2022 &ndash; Aug 2022</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="exp-role">IT Support Technician</p>
+            <p class="exp-org">ALX1 Agro</p>
+            <p class="exp-meta">Feb 2021 &ndash; Dec 2021</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="exp-role">Job Shadow &mdash; Storage Area Network Administrator</p>
+            <p class="exp-org">Advance Auto Parts</p>
+            <p class="exp-meta">Jan 2020 &ndash; Feb 2020</p>
+          </div>
+
+        </section>
+
+        <!-- Technical Skills -->
+         <!--
+        <section>
+          <h1>Technical Skills</h1>
+          <ul class="skill-set">
+            <li>DFIR</li>
+            <li>Threat Hunting</li>
+            <li>Security Operations</li>
+            <li>Network Security</li>
+            <li>Endpoint Security</li>
+            <li>Log Analysis</li>
+            <li>SIEM &amp; Telemetry</li>
+            <li>Linux &amp; Windows</li>
+            <li>Python</li>
+            <li>PowerShell</li>
+            <li>Bash</li>
+            <li>Scripting &amp; Automation</li>
+            <li>CTFs &amp; Labs</li>
+          </ul>
+        </section>
+        -->
+
+        <!-- Certifications -->
+        <section>
+          <h1>Certifications</h1>
+          <div class="exp-item">
+            <p class="exp-role">In Progress - TCM Practical Network Penetration Tester (PNPT)</p>
+
+            <p class="exp-role">Splunk Core Certified Power User</p>
+
+            <p class="exp-role">CrowdStrike Certified Falcon Hunter (CCFH)</p>
+
+            <p class="exp-role">CrowdStrike Certified Falcon Responder (CCFR)</p>
+
+            <p class="exp-role">CrowdStrike Certified Falcon Administrator (CCFA)</p>
+
+            <p class="exp-role">CompTIA Cybersecurity Analyst (CySA+)</p>
+
+            <p class="exp-role">CompTIA Security+</p>
+
+            <p class="exp-role">CompTIA Network+</p>
+
+            <p class="exp-role">CompTIA A+</p>
+
+          </div>
+        </section>
+
+        <!-- Teaching -->
+        <section>
+          <h1>Teaching</h1>
+          <div class="exp-item">
+            <p class="exp-role">Tech Fellow &bull; CodePath</p>
+            <p class="exp-meta">Fall 2024 - CYB 101: Intro to Cybersecurity</p>
+          </div>
+        </section>
+
+        <!-- Honors and Awards -->
+        <section>
+          <h1>Honors &amp; Awards</h1>
+
+          <div class="exp-item">
+            <p class="award-title">Truist Technology Immersion Challenge Winner (HackTheBox CTF)</p>
+            <p class="award-meta">Issued by Truist, Georgia State University &bull; Nov 2025</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="award-title"> Top 35 University Teams -<a href="https://cyberskyline.com/data/power-ranking/spring-2023-national"> National Cyber League </a> </p>
+            <p class="award-meta">Issued by Cyber Skyline; Spring 2023</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="award-title">National Cyber League Games Scholarship</p>
+            <p class="award-meta">Issued by Cyber Skyline, ISACA Foundation &bull; Aug 2024</p>
+          </div>
+
+          <div class="exp-item">
+            <p class="award-title">CrowdStrike Mentorship Scholarship</p>
+            <p class="award-meta">Issued by Cyber Skyline &bull; Mar 2024</p>
+
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section>
+          <h1>Contact</h1>
+          <ul class="contact-list">
+            <li><span class="contact-label">Email:</span> Message me on <a href="https://www.linkedin.com/in/emran-habib/" target="_blank">LinkedIn</a></li>
+            <li><span class="contact-label">HackTheBox:</span> <a href="https://app.hackthebox.com/profile/315553" target="_blank">app.hackthebox.com/profile/315553</a></li>
+            <li><span class="contact-label">TryHackMe:</span> <a href="https://tryhackme.com/p/MagnesiumEnjoyer" target="_blank">tryhackme.com/p/MagnesiumEnjoyer</a></li>
+            <li><span class="contact-label">Pwned Labs:</span> <a href="https://pwnedlabs.io/@MagnesiumEnjoyer5000" target="_blank">pwnedlabs.io/@MagnesiumEnjoyer5000</a></li>
+            <li><span class="contact-label">GitHub:</span> <a href="https://github.com/EHabib-US" target="_blank">github.com/EHabib-US</a></li>
+          </ul>
+        </section>
+
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
